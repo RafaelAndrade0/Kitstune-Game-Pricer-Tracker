@@ -10,10 +10,6 @@ class Header extends StatelessWidget {
         left: 20,
         right: 20,
       ),
-      // padding: EdgeInsets.symmetric(
-      //   vertical: 35,
-      //   horizontal: 20,
-      // ),
       child: Column(
         children: <Widget>[
           Row(
@@ -40,15 +36,13 @@ class Header extends StatelessWidget {
           Container(
             height: 40,
             decoration: BoxDecoration(
-              // color: Colors.white.withOpacity(0.4),
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.1),
-                  // spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: Offset(0, 3),
                 ),
               ],
             ),
@@ -62,9 +56,6 @@ class Header extends StatelessWidget {
                   Icons.search,
                   color: Colors.grey[400],
                 ),
-                // border: OutlineInputBorder(
-                //   borderRadius: BorderRadius.circular(8),
-                // ),
                 hintText: 'Search',
               ),
             ),

@@ -96,20 +96,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomGames(),
         ],
       ),
-      // body: CustomScrollView(
-      //   slivers: <Widget>[
-      //     SliverFillRemaining(
-      //       hasScrollBody: false,
-      //       child: Column(
-      //         children: <Widget>[
-      //           Header(),
-      //           GamesCaroulsel(),
-      //           BottomGames(),
-      //         ],
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

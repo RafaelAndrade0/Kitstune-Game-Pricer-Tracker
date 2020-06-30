@@ -9,6 +9,7 @@ class BottomGames extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        // height: 300,
         margin: EdgeInsets.only(top: 15),
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -34,67 +35,82 @@ class BottomGames extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Outros Jogos',
+                  'Outras Ofertas',
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
                       color: Color(0XFF080509)),
                 ),
-                Text(
-                  'Ver mais',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w800,
-                    color: Color(0xFF65a0cd),
-                  ),
-                ),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      'Ver mais',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800,
+                        color: Color(0XFF0171ce),
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Color(0XFF0171ce),
+                    )
+                  ],
+                )
               ],
             ),
             Expanded(
               child: Container(
-                // width: double.infinity,
-                // height: 150,
+                width: double.infinity,
                 child: ListView(
-                  // This next line does the trick.
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Expanded(
-                          child: Container(
-                            width: 130.0,
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text('abc'),
-                      ],
+                    BottomGameCard(
+                      cardImage:
+                          'https://mfiles.alphacoders.com/810/810953.jpg',
                     ),
-                    Container(
-                      width: 160.0,
-                      color: Colors.blue,
+                    BottomGameCard(
+                      cardImage:
+                          'https://i.pinimg.com/originals/2d/90/00/2d90002edd607464a1baee3c35cf319f.jpg',
                     ),
-                    Container(
-                      width: 160.0,
-                      color: Colors.green,
+                    BottomGameCard(
+                      cardImage:
+                          'https://mfiles.alphacoders.com/794/794662.png',
                     ),
-                    Container(
-                      width: 160.0,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      width: 160.0,
-                      color: Colors.orange,
+                    BottomGameCard(
+                      cardImage: 'https://wallpapercave.com/wp/wp3277347.jpg',
                     ),
                   ],
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class BottomGameCard extends StatelessWidget {
+  final String cardImage;
+  const BottomGameCard({
+    @required this.cardImage,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 10, top: 10),
+      width: 130.0,
+      decoration: BoxDecoration(
+        image:
+            DecorationImage(image: NetworkImage(cardImage), fit: BoxFit.cover),
+        // color: Colors.red,
+        borderRadius: BorderRadius.all(
+          Radius.circular(18),
         ),
       ),
     );
