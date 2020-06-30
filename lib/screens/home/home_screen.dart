@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:kitsune/screens/home/widgets/bottom_games.dart';
 import 'package:kitsune/screens/home/widgets/games_caroulsel.dart';
 import 'package:kitsune/screens/home/widgets/header.dart';
 
@@ -14,8 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(),
-      backgroundColor: Color(0xFFE5E8EE),
+      backgroundColor: Color(0xFFf3f4f6),
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.white,
         // containerHeight: 70,
         onItemSelected: (value) => setState(() {
           _currentIndex = value;
@@ -88,12 +90,26 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Header(),
           GamesCaroulsel(),
+          BottomGames(),
         ],
       ),
+      // body: CustomScrollView(
+      //   slivers: <Widget>[
+      //     SliverFillRemaining(
+      //       hasScrollBody: false,
+      //       child: Column(
+      //         children: <Widget>[
+      //           Header(),
+      //           GamesCaroulsel(),
+      //           BottomGames(),
+      //         ],
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

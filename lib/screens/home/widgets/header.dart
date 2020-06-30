@@ -40,11 +40,21 @@ class Header extends StatelessWidget {
           Container(
             height: 40,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.4),
+              // color: Colors.white.withOpacity(0.4),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  // spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
             ),
             child: TextField(
               decoration: InputDecoration(
+                fillColor: Colors.white,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 hintStyle: TextStyle(color: Colors.grey[400]),
