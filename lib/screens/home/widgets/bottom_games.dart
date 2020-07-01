@@ -102,17 +102,41 @@ class BottomGameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(right: 10, top: 10),
-      width: 130.0,
-      decoration: BoxDecoration(
-        image:
-            DecorationImage(image: NetworkImage(cardImage), fit: BoxFit.cover),
-        // color: Colors.red,
-        borderRadius: BorderRadius.all(
-          Radius.circular(18),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            margin: EdgeInsets.only(right: 10, top: 10),
+            width: 130.0,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(cardImage),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(18),
+              ),
+            ),
+          ),
         ),
-      ),
+        Text('Control'),
+        Row(
+          children: <Widget>[
+            Text(
+              'R\$80,00',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            Text(
+              'R\$150,00',
+              style: TextStyle(decoration: TextDecoration.lineThrough),
+            ),
+          ],
+        )
+      ],
     );
   }
 }

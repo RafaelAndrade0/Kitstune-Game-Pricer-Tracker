@@ -13,12 +13,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       // appBar: AppBar(),
       backgroundColor: Color(0xFFf3f4f6),
       bottomNavigationBar: BottomNavyBar(
         backgroundColor: Colors.white,
-        // containerHeight: 70,
         onItemSelected: (value) => setState(() {
           _currentIndex = value;
         }),

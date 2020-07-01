@@ -118,7 +118,7 @@ List<Game> gameList = [
           "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
       originalPrice: 200.0,
       discountedPrice: 80.0,
-      splash: "https://wallpapercave.com/wp/wp5026248.png",
+      splash: "https://images2.alphacoders.com/106/thumb-1920-1066635.png",
       thumb:
           "https://s2.glbimg.com/hqXTORVC-9lEJmRs3pMZeuJmkRg=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/4/O/2xxTYZQvGEv2hSNv1nMw/persona-5-the-royal-joker.jpg"),
   Game(
