@@ -120,7 +120,10 @@ class BottomGameCard extends StatelessWidget {
             ),
           ),
         ),
-        Text('Control'),
+        Text(
+          'Control',
+          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        ),
         Row(
           children: <Widget>[
             Text(
@@ -130,9 +133,12 @@ class BottomGameCard extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
             ),
-            Text(
-              'R\$150,00',
-              style: TextStyle(decoration: TextDecoration.lineThrough),
+            Padding(
+              padding: EdgeInsets.only(left: 5),
+              child: Text(
+                'R\$150,00',
+                style: TextStyle(decoration: TextDecoration.lineThrough),
+              ),
             ),
           ],
         )
