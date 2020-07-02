@@ -13,10 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
       // appBar: AppBar(),
-      backgroundColor: Color(0xFFf3f4f6),
+      backgroundColor: const Color(0xfff3f4f6),
       bottomNavigationBar: BottomNavyBar(
         backgroundColor: Colors.white,
         onItemSelected: (value) => setState(() {
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Header(),
           GamesCaroulsel(),
-          BottomGames(),
+          const BottomGames(),
         ],
       ),
     );

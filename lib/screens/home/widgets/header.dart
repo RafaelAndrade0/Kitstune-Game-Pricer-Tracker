@@ -4,7 +4,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         top: 35,
         bottom: 15,
         left: 20,
@@ -24,13 +24,13 @@ class Header extends StatelessWidget {
               ),
               CircleAvatar(
                 backgroundColor: Colors.grey[800],
-                backgroundImage: NetworkImage(
+                backgroundImage: const NetworkImage(
                   'https://avatarfiles.alphacoders.com/170/170299.jpg',
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
@@ -42,7 +42,7 @@ class Header extends StatelessWidget {
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.1),
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),

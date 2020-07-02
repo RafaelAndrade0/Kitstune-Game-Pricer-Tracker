@@ -16,7 +16,7 @@ class _GameCardState extends State<GameCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       width: 320,
       child: Stack(
         children: <Widget>[
@@ -24,7 +24,7 @@ class _GameCardState extends State<GameCard> {
             height: 320,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),
               boxShadow: [
@@ -46,7 +46,7 @@ class _GameCardState extends State<GameCard> {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w900,
-                      color: Color(0XFF080509),
+                      color: const Color(0xff080509),
                     ),
                   ),
                   Text(
@@ -66,7 +66,7 @@ class _GameCardState extends State<GameCard> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 5),
+                        padding: const EdgeInsets.only(left: 5),
                         child: Text(
                           'R\$${widget.game.originalPrice.toStringAsFixed(2)}',
                           style: TextStyle(
@@ -85,7 +85,7 @@ class _GameCardState extends State<GameCard> {
           Container(
             height: 180,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
               ),
@@ -99,7 +99,7 @@ class _GameCardState extends State<GameCard> {
             bottom: 105,
             left: 260,
             child: Container(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
@@ -113,7 +113,7 @@ class _GameCardState extends State<GameCard> {
               ),
               child: Icon(
                 Icons.bookmark,
-                color: Color(0xFF080509),
+                color: const Color(0xFF080509),
               ),
             ),
           ),

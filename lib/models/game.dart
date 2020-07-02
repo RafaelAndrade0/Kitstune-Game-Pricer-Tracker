@@ -50,6 +50,7 @@ class Game {
     };
   }
 
+  // ignore: prefer_constructors_over_static_methods
   static Game fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 

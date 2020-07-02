@@ -9,12 +9,11 @@ class BottomGames extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        // height: 300,
-        margin: EdgeInsets.only(top: 15),
-        padding: EdgeInsets.all(20),
+        margin: const EdgeInsets.only(top: 15),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Color(0xFFfefffe),
-          borderRadius: BorderRadius.only(
+          color: const Color(0xfffefffe),
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
           ),
@@ -22,7 +21,7 @@ class BottomGames extends StatelessWidget {
             BoxShadow(
               blurRadius: 3,
               spreadRadius: 2,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
               color: Colors.black.withOpacity(0.1),
             ),
           ],
@@ -39,7 +38,7 @@ class BottomGames extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
-                      color: Color(0XFF080509)),
+                      color: const Color(0xff080509)),
                 ),
                 Row(
                   children: <Widget>[
@@ -48,14 +47,14 @@ class BottomGames extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w800,
-                        color: Color(0XFF0171ce),
+                        color: const Color(0xff0171ce),
                         letterSpacing: 1,
                       ),
                     ),
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
-                      color: Color(0XFF0171ce),
+                      color: const Color(0xff0171ce),
                     )
                   ],
                 )
@@ -66,7 +65,7 @@ class BottomGames extends StatelessWidget {
                 width: double.infinity,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: <Widget>[
+                  children: const <Widget>[
                     BottomGameCard(
                       cardImage:
                           'https://mfiles.alphacoders.com/810/810953.jpg',
@@ -107,14 +106,14 @@ class BottomGameCard extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Container(
-            margin: EdgeInsets.only(right: 10, top: 10),
+            margin: const EdgeInsets.only(right: 10, top: 10),
             width: 130.0,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(cardImage),
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(18),
               ),
             ),
@@ -134,7 +133,7 @@ class BottomGameCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 5),
+              padding: const EdgeInsets.only(left: 5),
               child: Text(
                 'R\$150,00',
                 style: TextStyle(decoration: TextDecoration.lineThrough),
