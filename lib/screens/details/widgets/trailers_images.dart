@@ -5,8 +5,8 @@ class TrailersImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xfffdfdfd),
-      margin: EdgeInsets.all(8),
+      color: const Color(0xfffdfdfd),
+      margin: const EdgeInsets.all(8),
       width: double.infinity,
       height: MediaQuery.of(context).size.height * .20,
       child: ListView(
@@ -14,10 +14,7 @@ class TrailersImages extends StatelessWidget {
         children: <Widget>[
           Container(
             width: 160.0,
-            // color: Colors.red,
-            decoration: BoxDecoration(
-              // color: Colors.red,
-              // color: Color(0xfffdfdfd),
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
@@ -33,40 +30,40 @@ class TrailersImages extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     right: 5,
                     left: 5,
                     bottom: 8,
                   ),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
                         'https://proximonivel.pt/wp-content/uploads/2017/04/nier-automata-pn-noticia-3.jpg',
                       ),
                     ),
                     color: Colors.purple,
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(20),
                     ),
                   ),
                   height: MediaQuery.of(context).size.height * .09,
                 ),
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     right: 5,
                     left: 5,
                     // bottom: 5,
                   ),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8oU0U7INyW6OPbDKw_2BTzeFWNlm46dYv3g&usqp=CAU',
                       ),
                     ),
                     color: Colors.pink,
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(20),
                     ),
                   ),
@@ -78,14 +75,14 @@ class TrailersImages extends StatelessWidget {
           Container(
             width: 160.0,
             decoration: BoxDecoration(
-              image: DecorationImage(
+              image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
                   'https://www.futurebehind.com/wp-content/uploads/2019/03/NieR-Automata_201604_SS_2B9SA2_01_ONLINE.jpg',
                 ),
               ),
               color: Colors.green,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),
             ),

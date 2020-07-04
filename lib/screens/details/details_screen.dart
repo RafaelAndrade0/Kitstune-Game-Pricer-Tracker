@@ -27,13 +27,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
             floating: false,
             pinned: false,
             snap: false,
-            expandedHeight: MediaQuery.of(context).size.height * .55,
+            expandedHeight: MediaQuery.of(context).size.height * .65,
             flexibleSpace: Stack(
               children: <Widget>[
                 Positioned.fill(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomRight: Radius.circular(40),
                       ),
                       boxShadow: [
@@ -50,10 +50,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(5.0),
                   alignment: Alignment.bottomCenter,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomRight: Radius.circular(40),
                     ),
                     gradient: LinearGradient(
@@ -69,6 +69,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                   child: Wrap(
                     alignment: WrapAlignment.center,
+                    runSpacing: 5,
                     children: <Widget>[
                       Text(
                         'Nier Automata',
@@ -86,6 +87,62 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Icon(
+                              Icons.games,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                            Icon(
+                              Icons.games,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                            Icon(
+                              Icons.games,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 10, top: 10),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                            onTap: () => print('tap'),
+                            child: Ink(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              height: 45,
+                              decoration: const BoxDecoration(
+                                color: Color(0xff0072cd),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Comprar por R\$ ${widget.game.discountedPrice.toStringAsFixed(2)}',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -124,10 +181,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           fontSize: 20,
                         ),
                       ),
-                      Text('Desenvolvedor: '),
-                      Text('Publicador: '),
-                      Text('Diretores: '),
-                      Text('Data de Lançamento: '),
+                      const Text('Desenvolvedor: '),
+                      const Text('Publicador: '),
+                      const Text('Diretores: '),
+                      const Text('Data de Lançamento: '),
                     ],
                   ),
                 ),

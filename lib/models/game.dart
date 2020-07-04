@@ -108,8 +108,7 @@ List<Game> gameList = [
           "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem",
       originalPrice: 150.0,
       discountedPrice: 99.0,
-      splash:
-          "https://i0.wp.com/www.selectgame.com.br/wp-content/uploads/2019/01/Resident-Evil-2-New-Key-Visual-Leon-e-Claire-Wallpaper-Full-HD-1920x1080.jpg?fit=1920%2C1080&ssl=1",
+      splash: "https://wallpapercave.com/wp/wp4661365.jpg",
       thumb:
           "https://oimparcial.com.br/app/uploads/2019/12/Resident-Evil-2-Remake-696x392-1.jpg"),
   Game(
