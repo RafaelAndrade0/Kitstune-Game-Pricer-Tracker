@@ -6,7 +6,7 @@ class TrailersImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xfffdfdfd),
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.only(top: 8),
       width: double.infinity,
       height: MediaQuery.of(context).size.height * .20,
       child: ListView(

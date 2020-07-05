@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
 import 'package:kitsune/screens/details/details_screen.dart';
+import 'package:kitsune/screens/details/details_screen_alternate.dart';
 
 class GameCard extends StatefulWidget {
   final Game game;
@@ -20,7 +21,7 @@ class _GameCardState extends State<GameCard> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailsScreen(
+          builder: (context) => DetailsScreenAlternate(
             game: widget.game,
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
 import 'package:kitsune/screens/details/widgets/trailers_images.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class DetailsScreen extends StatefulWidget {
   final Game game;
@@ -28,6 +29,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
             pinned: false,
             snap: false,
             expandedHeight: MediaQuery.of(context).size.height * .65,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.bookmark_border,
+                  size: 28,
+                ),
+                onPressed: () {},
+              )
+            ],
             flexibleSpace: Stack(
               children: <Widget>[
                 Positioned.fill(
@@ -72,7 +82,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     runSpacing: 5,
                     children: <Widget>[
                       Text(
-                        'Nier Automata',
+                        widget.game.title,
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w900,
@@ -94,17 +104,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Icon(
-                              Icons.games,
+                              MdiIcons.microsoftXbox,
                               color: Colors.white,
                               size: 30,
                             ),
                             Icon(
-                              Icons.games,
+                              MdiIcons.sonyPlaystation,
                               color: Colors.white,
                               size: 30,
                             ),
                             Icon(
-                              Icons.games,
+                              MdiIcons.video4KBox,
                               color: Colors.white,
                               size: 30,
                             ),
@@ -154,9 +164,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
             delegate: SliverChildListDelegate(
               [
                 TrailersImages(),
-                TrailersImages(),
-                TrailersImages(),
-                TrailersImages(),
                 Divider(
                   color: Colors.grey[200],
                   height: 20,
@@ -172,45 +179,70 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     right: 8,
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Sobre',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                      ),
-                      const Text('Desenvolvedor: '),
-                      const Text('Publicador: '),
-                      const Text('Diretores: '),
-                      const Text('Data de Lançamento: '),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    top: 8,
-                    bottom: 8,
-                    right: 8,
-                  ),
-                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         'Notas',
                         style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xff080509),
                         ),
                       ),
                       Row(
-                        children: <Widget>[Container()],
+                        children: <Widget>[
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 40, horizontal: 30),
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const <Widget>[
+                                Text('Metacritic'),
+                                Text('95')
+                              ],
+                            ),
+                          )
+                        ],
                       )
+                      // const Text(
+                      //   'Desenvolvedor: ',
+                      // ),
+                      // const Text('Publicador: '),
+                      // const Text('Diretores: '),
+                      // const Text('Data de Lançamento: '),
                     ],
                   ),
-                )
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(
+                //     left: 20,
+                //     top: 8,
+                //     bottom: 8,
+                //     right: 8,
+                //   ),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: <Widget>[
+                //       Text(
+                //         'Notas',
+                //         style: TextStyle(
+                //           fontWeight: FontWeight.w600,
+                //           fontSize: 20,
+                //         ),
+                //       ),
+                //       Row(
+                //         children: <Widget>[Container()],
+                //       )
+                //     ],
+                //   ),
+                // )
               ],
             ),
           ),
