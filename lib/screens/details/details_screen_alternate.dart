@@ -316,10 +316,17 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                     color: Colors.white,
                   ),
                 ),
-                Icon(
-                  Icons.bookmark_border,
-                  size: 30,
-                  color: Colors.black,
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey.withOpacity(0.8),
+                  ),
+                  child: Icon(
+                    Icons.bookmark_border,
+                    size: 30,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             )),
