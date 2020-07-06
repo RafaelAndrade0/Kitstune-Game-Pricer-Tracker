@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
 import 'package:kitsune/screens/details/widgets/trailers_images.dart';
@@ -15,7 +16,6 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: Row(children: <Widget>[],
       body: SingleChildScrollView(
         child: Stack(
           children: <Widget>[
@@ -51,12 +51,10 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                 margin: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * .33),
                 child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.only(left: 30),
                       child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
@@ -167,7 +165,6 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
@@ -179,33 +176,126 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                       ),
                     ),
                     TrailersImages(),
+                    Divider(
+                      color: Colors.grey[200],
+                      height: 20,
+                      thickness: 1,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
                     Row(
                       children: <Widget>[
-                        Container(
-                          // padding: const EdgeInsets.symmetric(
-                          //     vertical: 40, horizontal: 30),
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(15),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 8),
+                            padding: EdgeInsets.all(15),
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const <Widget>[
+                                Text(
+                                  'Metacritic',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '95',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
                             ),
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const <Widget>[
-                              Text('Metacritic'),
-                              Text('95')
-                            ],
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 8),
+                            padding: EdgeInsets.all(15),
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const <Widget>[
+                                Text(
+                                  'Steam',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '96%',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        )
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 8),
+                            padding: EdgeInsets.all(15),
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.green[200],
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const <Widget>[
+                                Text(
+                                  'GOG',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '3/5',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // LineChart(
+                        //   LineChartData(
+                        //       axisTitleData: FlAxisTitleData(
+                        //         topTitle: AxisTitle(titleText: 'Teste'),
+                        //       ),
+                        //       backgroundColor: Colors.red),
+                        // ),
                       ],
                     )
-                    // const Text(
-                    //   'Desenvolvedor: ',
-                    // ),
-                    // const Text('Publicador: '),
-                    // const Text('Diretores: '),
-                    // const Text('Data de Lançamento: '),
                   ],
                 ),
               ),
