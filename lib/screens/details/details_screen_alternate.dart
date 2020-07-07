@@ -24,7 +24,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(widget.game.splash),
+                  image: AssetImage(widget.game.splash),
                 ),
               ),
             ),
@@ -175,7 +175,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                         color: const Color(0xff080509),
                       ),
                     ),
-                    TrailersImages(),
+                    TrailersImages(widget.game.previewImage),
                     Divider(
                       color: Colors.grey[200],
                       height: 20,

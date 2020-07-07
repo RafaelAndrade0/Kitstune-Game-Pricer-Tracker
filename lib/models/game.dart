@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+
 class Game {
   final int id;
   final String title;
@@ -8,6 +10,7 @@ class Game {
   final String description;
   final double originalPrice;
   final double discountedPrice;
+  final List<String> previewImage;
   Game({
     this.id,
     this.title,
@@ -16,6 +19,7 @@ class Game {
     this.description,
     this.originalPrice,
     this.discountedPrice,
+    this.previewImage,
   });
 
   Game copyWith({
@@ -26,6 +30,7 @@ class Game {
     String description,
     double originalPrice,
     double discountedPrice,
+    List<String> previewImage,
   }) {
     return Game(
       id: id ?? this.id,
@@ -35,6 +40,7 @@ class Game {
       description: description ?? this.description,
       originalPrice: originalPrice ?? this.originalPrice,
       discountedPrice: discountedPrice ?? this.discountedPrice,
+      previewImage: previewImage ?? this.previewImage,
     );
   }
 
@@ -47,10 +53,10 @@ class Game {
       'description': description,
       'originalPrice': originalPrice,
       'discountedPrice': discountedPrice,
+      'previewImage': previewImage,
     };
   }
 
-  // ignore: prefer_constructors_over_static_methods
   static Game fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
@@ -62,6 +68,7 @@ class Game {
       description: map['description'],
       originalPrice: map['originalPrice'],
       discountedPrice: map['discountedPrice'],
+      previewImage: List<String>.from(map['previewImage']),
     );
   }
 
@@ -71,7 +78,7 @@ class Game {
 
   @override
   String toString() {
-    return 'Game(id: $id, title: $title, thumb: $thumb, splash: $splash, description: $description, originalPrice: $originalPrice, discountedPrice: $discountedPrice)';
+    return 'Game(id: $id, title: $title, thumb: $thumb, splash: $splash, description: $description, originalPrice: $originalPrice, discountedPrice: $discountedPrice, previewImage: $previewImage)';
   }
 
   @override
@@ -85,7 +92,8 @@ class Game {
         o.splash == splash &&
         o.description == description &&
         o.originalPrice == originalPrice &&
-        o.discountedPrice == discountedPrice;
+        o.discountedPrice == discountedPrice &&
+        listEquals(o.previewImage, previewImage);
   }
 
   @override
@@ -96,40 +104,58 @@ class Game {
         splash.hashCode ^
         description.hashCode ^
         originalPrice.hashCode ^
-        discountedPrice.hashCode;
+        discountedPrice.hashCode ^
+        previewImage.hashCode;
   }
 }
 
 List<Game> gameList = [
   Game(
-      id: 1,
-      title: "Resident Evil 2",
-      description:
-          "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem",
-      originalPrice: 150.0,
-      discountedPrice: 99.0,
-      splash: "https://wallpapercave.com/wp/wp4661365.jpg",
-      thumb:
-          "https://oimparcial.com.br/app/uploads/2019/12/Resident-Evil-2-Remake-696x392-1.jpg"),
+    id: 1,
+    title: "Resident Evil 2",
+    description:
+        "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem",
+    originalPrice: 150.0,
+    discountedPrice: 99.0,
+    splash: "assets/images/splash1.jpg",
+    thumb: "assets/images/card1.jpg",
+    previewImage: [
+      "assets/images/re2_1.jpg",
+      "assets/images/re2_2.jpg",
+      "assets/images/re2_3.jpg",
+      "assets/images/re2_4.jpg",
+    ],
+  ),
   Game(
-      id: 2,
-      title: "Persona 5",
-      description:
-          "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      originalPrice: 200.0,
-      discountedPrice: 80.0,
-      splash: "https://images2.alphacoders.com/106/thumb-1920-1066635.png",
-      thumb:
-          "https://s2.glbimg.com/hqXTORVC-9lEJmRs3pMZeuJmkRg=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/4/O/2xxTYZQvGEv2hSNv1nMw/persona-5-the-royal-joker.jpg"),
+    id: 2,
+    title: "Persona 5",
+    description:
+        "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    originalPrice: 200.0,
+    discountedPrice: 80.0,
+    splash: "assets/images/splash2.jpg",
+    thumb: "assets/images/card2.jpg",
+    previewImage: [
+      "assets/images/p5_1.jpg",
+      "assets/images/p5_2.jpeg",
+      "assets/images/p5_3.jpg",
+      "assets/images/p5_4.jpg",
+    ],
+  ),
   Game(
-      id: 2,
-      title: "Nier Automata",
-      description:
-          "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-      originalPrice: 300.0,
-      discountedPrice: 299.0,
-      splash:
-          "https://catwithmonocle.com/wp-content/uploads/2020/01/nier-automata-cover-art-yorha-edition-1440x2560-1.jpg",
-      thumb:
-          "https://uploads.jovemnerd.com.br/wp-content/uploads/2017/03/nier-automata-capa-1210x540.jpg"),
+    id: 2,
+    title: "Nier Automata",
+    description:
+        "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    originalPrice: 300.0,
+    discountedPrice: 299.0,
+    splash: "assets/images/splash3.jpg",
+    thumb: "assets/images/card3.jpg",
+    previewImage: [
+      "assets/images/na_1.jpg",
+      "assets/images/na_2.jpg",
+      "assets/images/na_3.jpg",
+      "assets/images/na_4.jpg",
+    ],
+  ),
 ];

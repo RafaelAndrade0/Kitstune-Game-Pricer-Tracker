@@ -7,86 +7,86 @@ class BottomGames extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.only(top: 15),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: const Color(0xfffefffe),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 3,
-              spreadRadius: 2,
-              offset: const Offset(0, 1),
-              color: Colors.black.withOpacity(0.1),
-            ),
-          ],
+    return Container(
+      height: 240,
+      margin: const EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: const Color(0xfffefffe),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Outras Ofertas',
-                  style: TextStyle(
-                      fontSize: 18,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 3,
+            spreadRadius: 2,
+            offset: const Offset(0, 1),
+            color: Colors.black.withOpacity(0.1),
+          ),
+        ],
+      ),
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                'Outras Ofertas',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: const Color(0xff080509)),
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Ver mais',
+                    style: TextStyle(
+                      fontSize: 16,
                       fontWeight: FontWeight.w800,
-                      color: const Color(0xff080509)),
-                ),
-                Row(
-                  children: <Widget>[
-                    Text(
-                      'Ver mais',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xff0171ce),
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
                       color: const Color(0xff0171ce),
-                    )
-                  ],
-                )
-              ],
-            ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const <Widget>[
-                    BottomGameCard(
-                      cardImage:
-                          'https://mfiles.alphacoders.com/810/810953.jpg',
+                      letterSpacing: 1,
                     ),
-                    BottomGameCard(
-                      cardImage:
-                          'https://i.pinimg.com/originals/2d/90/00/2d90002edd607464a1baee3c35cf319f.jpg',
-                    ),
-                    BottomGameCard(
-                      cardImage:
-                          'https://mfiles.alphacoders.com/794/794662.png',
-                    ),
-                    BottomGameCard(
-                      cardImage: 'https://wallpapercave.com/wp/wp3277347.jpg',
-                    ),
-                  ],
-                ),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16,
+                    color: const Color(0xff0171ce),
+                  )
+                ],
+              )
+            ],
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const <Widget>[
+                  BottomGameCard(
+                    cardImage: 'assets/images/bc1.jpg',
+                    cardTitle: 'Control',
+                  ),
+                  BottomGameCard(
+                    cardImage: 'assets/images/bc2.jpg',
+                    cardTitle: 'Dark Souls',
+                  ),
+                  BottomGameCard(
+                    cardImage: 'assets/images/bc3.png',
+                    cardTitle: 'Pokemon Shield',
+                  ),
+                  BottomGameCard(
+                    cardImage: 'assets/images/bc4.jpg',
+                    cardTitle: 'Zelda',
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -94,8 +94,10 @@ class BottomGames extends StatelessWidget {
 
 class BottomGameCard extends StatelessWidget {
   final String cardImage;
+  final String cardTitle;
   const BottomGameCard({
     @required this.cardImage,
+    @required this.cardTitle,
     Key key,
   }) : super(key: key);
 
@@ -110,7 +112,7 @@ class BottomGameCard extends StatelessWidget {
             width: 130.0,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(cardImage),
+                image: AssetImage(cardImage),
                 fit: BoxFit.cover,
               ),
               borderRadius: const BorderRadius.all(
@@ -120,7 +122,7 @@ class BottomGameCard extends StatelessWidget {
           ),
         ),
         Text(
-          'Control',
+          cardTitle,
           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         ),
         Row(

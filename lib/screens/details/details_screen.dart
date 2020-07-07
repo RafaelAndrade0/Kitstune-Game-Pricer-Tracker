@@ -163,7 +163,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                TrailersImages(),
+                TrailersImages([]),
                 Divider(
                   color: Colors.grey[200],
                   height: 20,

@@ -102,7 +102,7 @@ class _GameCardState extends State<GameCard> {
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(widget.game.thumb),
+                  image: AssetImage(widget.game.thumb),
                 ),
               ),
             ),

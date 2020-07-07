@@ -1,7 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TrailersImages extends StatelessWidget {
+class TrailersImages extends StatefulWidget {
+  final List<String> gamePreviews;
+
+  const TrailersImages(this.gamePreviews);
+
+  @override
+  _TrailersImagesState createState() => _TrailersImagesState();
+}
+
+class _TrailersImagesState extends State<TrailersImages> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,11 +23,12 @@ class TrailersImages extends StatelessWidget {
         children: <Widget>[
           Container(
             width: 160.0,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://blog.playstation.com/tachyon/sites/4/2018/03/07_nier.jpg'),
+                image: AssetImage(
+                  widget.gamePreviews[0],
+                ),
               ),
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
@@ -38,10 +48,10 @@ class TrailersImages extends StatelessWidget {
                         bottom: 8,
                       ),
                       decoration: BoxDecoration(
-                        image: const DecorationImage(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://proximonivel.pt/wp-content/uploads/2017/04/nier-automata-pn-noticia-3.jpg',
+                          image: AssetImage(
+                            widget.gamePreviews[1],
                           ),
                         ),
                         color: Colors.purple,
@@ -60,10 +70,10 @@ class TrailersImages extends StatelessWidget {
                         bottom: 8,
                       ),
                       decoration: BoxDecoration(
-                        image: const DecorationImage(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8oU0U7INyW6OPbDKw_2BTzeFWNlm46dYv3g&usqp=CAU',
+                          image: AssetImage(
+                            widget.gamePreviews[2],
                           ),
                         ),
                         color: Colors.pink,
@@ -81,10 +91,10 @@ class TrailersImages extends StatelessWidget {
           Container(
             width: 160.0,
             decoration: BoxDecoration(
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                  'https://www.futurebehind.com/wp-content/uploads/2019/03/NieR-Automata_201604_SS_2B9SA2_01_ONLINE.jpg',
+                image: AssetImage(
+                  widget.gamePreviews[3],
                 ),
               ),
               color: Colors.green,

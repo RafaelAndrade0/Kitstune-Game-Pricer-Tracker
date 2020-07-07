@@ -13,9 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(),
       backgroundColor: const Color(0xfff3f4f6),
       bottomNavigationBar: BottomNavyBar(
         backgroundColor: Colors.white,
@@ -59,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.grey[800],
                 )),
             activeColor: Colors.grey,
-            // activeColor: Colors.pink,
           ),
           BottomNavyBarItem(
             icon: Icon(
@@ -71,8 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.grey[800],
                 )),
             activeColor: Colors.grey,
-
-            // activeColor: Colors.blue,
           ),
           BottomNavyBarItem(
             icon: Icon(
@@ -84,16 +79,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.grey[800],
                 )),
             activeColor: Colors.grey,
-
-            // activeColor: Colors.blue,
           ),
         ],
       ),
       body: Column(
         children: <Widget>[
           Header(),
-          GamesCaroulsel(),
-          const BottomGames(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  GamesCaroulsel(),
+                  const BottomGames(),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
