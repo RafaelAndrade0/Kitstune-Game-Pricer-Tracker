@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
 import 'package:kitsune/screens/details/widgets/trailers_images.dart';
+import 'package:kitsune/screens/home/widgets/bottom_games.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class DetailsScreenAlternate extends StatefulWidget {
@@ -153,7 +154,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
               margin: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * .60,
               ),
-              height: 500,
+              height: 600,
               decoration: const BoxDecoration(
                 color: Color(0xffFCFCFC),
                 borderRadius: BorderRadius.only(
@@ -286,49 +287,88 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                             ),
                           ),
                         ),
-                        // LineChart(
-                        //   LineChartData(
-                        //       axisTitleData: FlAxisTitleData(
-                        //         topTitle: AxisTitle(titleText: 'Teste'),
-                        //       ),
-                        //       backgroundColor: Colors.red),
-                        // ),
                       ],
+                    ),
+                    Divider(
+                      color: Colors.grey[200],
+                      height: 20,
+                      thickness: 1,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
+                    const Text(
+                      'Compra junto aí!',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w900,
+                        color: Color(0xff080509),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        // height: 150,
+                        width: double.infinity,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: const <Widget>[
+                            BottomGameCard(
+                              cardImage: 'assets/images/bc5.jpg',
+                              cardTitle: 'Tales of Berseria',
+                            ),
+                            BottomGameCard(
+                              cardImage: 'assets/images/bc6.jpg',
+                              cardTitle: 'Dark Souls 3',
+                            ),
+                            BottomGameCard(
+                              cardImage: 'assets/images/bc7.jpg',
+                              cardTitle: 'Valkyria Chronicles',
+                            ),
+                            BottomGameCard(
+                              cardImage: 'assets/images/bc8.png',
+                              cardTitle: 'Resident Evil 3',
+                            ),
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),
               ),
             ),
             SafeArea(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[500],
-                    borderRadius: const BorderRadius.only(
-                      bottomRight: Radius.circular(50),
-                      topRight: Radius.circular(50),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[500],
+                      borderRadius: const BorderRadius.only(
+                        bottomRight: Radius.circular(50),
+                        topRight: Radius.circular(50),
+                      ),
+                    ),
+                    child: const BackButton(
+                      color: Colors.white,
                     ),
                   ),
-                  child: const BackButton(
-                    color: Colors.white,
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.grey.withOpacity(0.8),
+                    ),
+                    child: Icon(
+                      Icons.bookmark_border,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.grey.withOpacity(0.8),
-                  ),
-                  child: Icon(
-                    Icons.bookmark_border,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
           ],
         ),
       ),

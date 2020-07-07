@@ -65,57 +65,55 @@ class _TrailersImagesState extends State<TrailersImages> {
               ),
             ],
           ),
-          Expanded(
-            child: Container(
-              width: 160.0,
-              child: Column(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        right: 5,
-                        left: 5,
-                        bottom: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            widget.gamePreviews[1],
-                          ),
-                        ),
-                        color: Colors.purple,
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                      height: MediaQuery.of(context).size.height * .09,
+          Container(
+            width: 160.0,
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      right: 5,
+                      left: 5,
+                      bottom: 8,
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        right: 5,
-                        left: 5,
-                        bottom: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            widget.gamePreviews[2],
-                          ),
-                        ),
-                        color: Colors.pink,
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(20),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          widget.gamePreviews[1],
                         ),
                       ),
-                      height: MediaQuery.of(context).size.height * .09,
+                      color: Colors.purple,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
+                    height: MediaQuery.of(context).size.height * .09,
                   ),
-                ],
-              ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      right: 5,
+                      left: 5,
+                      bottom: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          widget.gamePreviews[2],
+                        ),
+                      ),
+                      color: Colors.pink,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                    height: MediaQuery.of(context).size.height * .09,
+                  ),
+                ),
+              ],
             ),
           ),
           Container(
