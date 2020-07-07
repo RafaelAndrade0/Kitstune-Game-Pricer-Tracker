@@ -7,86 +7,88 @@ class BottomGames extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 240,
-      margin: const EdgeInsets.only(top: 15),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: const Color(0xfffefffe),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+    return Expanded(
+      child: Container(
+        // height: 350,
+        margin: const EdgeInsets.only(top: 15),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: const Color(0xfffefffe),
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              spreadRadius: 2,
+              offset: const Offset(0, 1),
+              color: Colors.black.withOpacity(0.1),
+            ),
+          ],
         ),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 3,
-            spreadRadius: 2,
-            offset: const Offset(0, 1),
-            color: Colors.black.withOpacity(0.1),
-          ),
-        ],
-      ),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                'Outras Ofertas',
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: const Color(0xff080509)),
-              ),
-              Row(
-                children: <Widget>[
-                  Text(
-                    'Ver mais',
-                    style: TextStyle(
-                      fontSize: 16,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Outras Ofertas',
+                  style: TextStyle(
+                      fontSize: 18,
                       fontWeight: FontWeight.w800,
-                      color: const Color(0xff0171ce),
-                      letterSpacing: 1,
+                      color: const Color(0xff080509)),
+                ),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      'Ver mais',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800,
+                        color: const Color(0xff0171ce),
+                        letterSpacing: 1,
+                      ),
                     ),
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    size: 16,
-                    color: const Color(0xff0171ce),
-                  )
-                ],
-              )
-            ],
-          ),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: const <Widget>[
-                  BottomGameCard(
-                    cardImage: 'assets/images/bc1.jpg',
-                    cardTitle: 'Control',
-                  ),
-                  BottomGameCard(
-                    cardImage: 'assets/images/bc2.jpg',
-                    cardTitle: 'Dark Souls',
-                  ),
-                  BottomGameCard(
-                    cardImage: 'assets/images/bc3.png',
-                    cardTitle: 'Pokemon Shield',
-                  ),
-                  BottomGameCard(
-                    cardImage: 'assets/images/bc4.jpg',
-                    cardTitle: 'Zelda',
-                  ),
-                ],
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: const Color(0xff0171ce),
+                    )
+                  ],
+                )
+              ],
+            ),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const <Widget>[
+                    BottomGameCard(
+                      cardImage: 'assets/images/bc1.jpg',
+                      cardTitle: 'Control',
+                    ),
+                    BottomGameCard(
+                      cardImage: 'assets/images/bc2.jpg',
+                      cardTitle: 'Dark Souls',
+                    ),
+                    BottomGameCard(
+                      cardImage: 'assets/images/bc3.png',
+                      cardTitle: 'Pokemon Shield',
+                    ),
+                    BottomGameCard(
+                      cardImage: 'assets/images/bc4.jpg',
+                      cardTitle: 'Zelda',
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -86,13 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Header(),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  GamesCaroulsel(),
-                  const BottomGames(),
-                ],
-              ),
+            child: Column(
+              children: <Widget>[
+                GamesCaroulsel(),
+                const BottomGames(),
+              ],
             ),
           ),
         ],

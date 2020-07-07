@@ -24,8 +24,8 @@ class Header extends StatelessWidget {
               ),
               CircleAvatar(
                 backgroundColor: Colors.grey[800],
-                backgroundImage: const NetworkImage(
-                  'https://avatarfiles.alphacoders.com/170/170299.jpg',
+                backgroundImage: const AssetImage(
+                  'assets/images/profile.jpg',
                 ),
               ),
             ],
