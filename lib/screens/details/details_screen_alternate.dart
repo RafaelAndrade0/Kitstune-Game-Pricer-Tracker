@@ -1,4 +1,3 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
 import 'package:kitsune/screens/details/widgets/trailers_images.dart';
@@ -59,7 +58,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                         children: <Widget>[
                           Text(
                             widget.game.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
@@ -119,7 +118,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                             borderRadius: const BorderRadius.all(
                               Radius.circular(15),
                             ),
-                            onTap: () => print('tap'),
+                            onTap: () {},
                             child: Ink(
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: 45,
@@ -167,12 +166,12 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Preview',
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w900,
-                        color: const Color(0xff080509),
+                        color: Color(0xff080509),
                       ),
                     ),
                     TrailersImages(widget.game.previewImage),
@@ -187,8 +186,8 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                       children: <Widget>[
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 8),
-                            padding: EdgeInsets.all(15),
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.all(15),
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.blue,
@@ -221,8 +220,8 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                         ),
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 8),
-                            padding: EdgeInsets.all(15),
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.all(15),
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -255,8 +254,8 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                         ),
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 8),
-                            padding: EdgeInsets.all(15),
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.all(15),
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.green[200],
@@ -312,7 +311,7 @@ class _DetailsScreenAlternateState extends State<DetailsScreenAlternate> {
                       topRight: Radius.circular(50),
                     ),
                   ),
-                  child: BackButton(
+                  child: const BackButton(
                     color: Colors.white,
                   ),
                 ),

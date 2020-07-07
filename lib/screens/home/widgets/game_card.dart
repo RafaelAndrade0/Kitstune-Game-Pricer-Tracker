@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kitsune/models/game.dart';
-import 'package:kitsune/screens/details/details_screen.dart';
 import 'package:kitsune/screens/details/details_screen_alternate.dart';
 
 class GameCard extends StatefulWidget {
@@ -54,10 +53,10 @@ class _GameCardState extends State<GameCard> {
                   children: <Widget>[
                     Text(
                       widget.game.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w900,
-                        color: const Color(0xff080509),
+                        color: Color(0xff080509),
                       ),
                     ),
                     Text(

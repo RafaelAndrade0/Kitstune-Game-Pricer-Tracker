@@ -129,7 +129,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             borderRadius: const BorderRadius.all(
                               Radius.circular(15),
                             ),
-                            onTap: () => print('tap'),
+                            onTap: () {},
                             child: Ink(
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: 45,
@@ -163,7 +163,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                TrailersImages([]),
+                const TrailersImages([]),
                 Divider(
                   color: Colors.grey[200],
                   height: 20,

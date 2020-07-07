@@ -127,7 +127,7 @@ class BottomGameCard extends StatelessWidget {
         ),
         Row(
           children: <Widget>[
-            Text(
+            const Text(
               'R\$80,00',
               style: TextStyle(
                 fontSize: 16,
